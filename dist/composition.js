@@ -3,6 +3,11 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+
+var _toConsumableArray2 = require('babel-runtime/helpers/toConsumableArray');
+
+var _toConsumableArray3 = _interopRequireDefault(_toConsumableArray2);
+
 exports.doWhen = doWhen;
 exports.invoker = invoker;
 exports.fnull = fnull;
@@ -23,8 +28,18 @@ var _collections = require('./collections');
 
 var _util = require('./util');
 
-function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+/**
+ * Composition module for creating functional pipelines
+ * @module src/composition
+ */
+
+/** 
+ * Wrapper function that will call an action when condition is true 
+ * @param {Boolean} - condition to determine whether or not to call action
+ * @param {Function} - action to be called if condition is true
+*/
 function doWhen(cond, action) {
   if ((0, _predicates.truthy)(cond)) return action();else return undefined;
 }
@@ -95,7 +110,7 @@ function checker() {
       if (check(obj)) {
         return errs;
       } else {
-        return [].concat(_toConsumableArray(errs), [check.message]);
+        return [].concat((0, _toConsumableArray3.default)(errs), [check.message]);
       }
     }, []);
   };

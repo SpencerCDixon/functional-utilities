@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "BABEL_ENV=production babel src -d dist --ignore src/__tests__",
-    "test": "nyc ava --concurrency=5",
+    "test": "nyc ava",
     "test:watch": "npm test -- --watch",
     "report": "nyc report --reporter=html"
   },
@@ -34,6 +34,7 @@
     "source": [
       "src/**/*.js"
     ],
+    "concurrency": 5,
     "failFast": true,
     "require": [
       "babel-register"

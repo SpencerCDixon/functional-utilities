@@ -26,25 +26,41 @@ exports.complement = complement;
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+/**
+ * Commonly used predicates module
+ * @module src/predicates
+ */
+
+/**
+ * Predicate to determine if value is a number
+ * @param {*} value - value to be tested
+ * @returns {Boolean} - whether or not value is a number
+*/
 function isNumber(value) {
   return typeof value === 'number';
 }
 
+/** Predicate to determine if value is a string */
 function isString(value) {
   return typeof value === 'string';
 }
 
+/** Predicate to determine if value is an array */
 function isArray(value) {
   return Array.isArray(value);
 }
 
+/** Predicate to determine if value is an array or string (i.e. indexable) */
 function isIndexed(value) {
   return isArray(value) || isString(value);
 }
 
+/** Predicate to determine if value is even */
 function isEven(val) {
   return val % 2 === 0;
 }
+
+/** Predicate to determine if value is odd */
 function isOdd(val) {
   return !isEven(val);
 }

@@ -4,9 +4,13 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _toArray3 = require('lodash/toArray');
+var _toArray3 = require('babel-runtime/helpers/toArray');
 
 var _toArray4 = _interopRequireDefault(_toArray3);
+
+var _toArray5 = require('lodash/toArray');
+
+var _toArray6 = _interopRequireDefault(_toArray5);
 
 exports.first = first;
 exports.second = second;
@@ -26,8 +30,6 @@ var _predicates = require('./predicates');
 var _util = require('./util');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _toArray2(arr) { return Array.isArray(arr) ? arr : Array.from(arr); }
 
 // Function that takes an array or string and returns an element at the
 // requested index.
@@ -58,7 +60,7 @@ function fifth(val) {
 };
 
 function rest(array) {
-  var _array = _toArray2(array);
+  var _array = (0, _toArray4.default)(array);
 
   var first = _array[0];
 
@@ -71,7 +73,7 @@ function tail(array) {
 };
 
 function butLast(coll) {
-  return (0, _toArray4.default)(coll).slice(0, -1);
+  return (0, _toArray6.default)(coll).slice(0, -1);
 }
 
 // Utility for creating new collections
