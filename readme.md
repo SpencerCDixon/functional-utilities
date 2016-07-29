@@ -7,3 +7,4 @@
 This project is a growing collection of FP utilities that I'd like to be able to
 reuse in multiple projects.
 
+[API Documentation](https://doclets.io/SpencerCDixon/functional-utilities/master)

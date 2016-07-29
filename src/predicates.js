@@ -38,11 +38,6 @@ export function hasKeys(...keys) {
     return every(keys, key => has(obj, key));
   }
 }
-export function hasValidatedKeys(...keys) {
-  const fun = () => hasKeys(keys)
-  fun.message = `Must have values for: ${keys.join(', ')}`
-  return fun;
-}
 
 // notice the intentional loose != operator.  Allows us to distinguish between
 // null, undefined, and everything else.

@@ -1,12 +1,11 @@
 import test from 'ava';
 import { HOF } from './macros';
 import {
-  isNumber, isString, isArray,
-  isIndexed,
-  existy,
-  truthy,
+  isNumber, isString, isArray, isIndexed,
+  existy, truthy,
   complement,
   isOdd, isEven,
+  hasKeys,
 } from '..';
 
 test('isIndexed returns true for arrays', t => {
@@ -64,6 +63,18 @@ test('isOdd returns true for odd nums', t => {
 
 test('complement is a HOF', HOF, complement);
 test('complement returns the opposite of a predicate', t => {
-  t.false(complement(isNumber)(4));
-  t.true(complement(isNumber)(''));
+  const notNumber = complement(isNumber);
+
+  t.false(notNumber(4));
+  t.true(notNumber(''));
+});
+
+test('hasKeys is a HOF', HOF, hasKeys);
+test('haskeys returns true if all keys are present in an object', t => {
+  const obj = { keyOne: 'here', keyTwo: 'also here' };
+  const isValid = hasKeys('keyOne', 'keyTwo');
+  const isInvalid = hasKeys('notValidKey');
+
+  t.true(isValid(obj));
+  t.false(isInvalid(obj));
 });

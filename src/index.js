@@ -1,11 +1,8 @@
 export {
   isIndexed,
-  hasKeys,
-  isNumber,
-  isString,
-  isArray,
-  existy,
-  truthy,
+  hasKeys, 
+  isNumber, isString, isArray,
+  existy, truthy,
   complement,
   isEven, isOdd,
 } from './predicates';
@@ -32,4 +29,5 @@ export {
 export {
   always, k,
   T, F,
+  fail, note, log, warn,
 } from './util';

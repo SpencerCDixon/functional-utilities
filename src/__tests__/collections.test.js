@@ -60,12 +60,10 @@ test('butLast returns everything but last elem of collection', t => {
 });
 
 test('cat combines arrays', t => {
-  const combined = cat([1,2], [3,4], [5,6]);
-  t.deepEqual(combined, [1,2,3,4,5,6]);
+  t.deepEqual(cat([1,2],[3,4],[5,6]), [1,2,3,4,5,6]);
 });
 test('cat returns empty array when invoked without a head', t => {
-  const result = cat();
-  t.deepEqual(result, []);
+  t.deepEqual(cat(), []);
 });
 
 test('construct creates a new array out of values', t => {
@@ -75,7 +73,6 @@ test('construct creates a new array out of values', t => {
 test('mapcat calls a func for every element and then concats them', t => {
   const nums = [1, 2, 3];
   const addComma = e => construct(e, [',']);
-  const result = mapcat(addComma, nums);
-  t.deepEqual(result, [1, ',', 2, ',', 3, ',']);
+  t.deepEqual(mapcat(addComma, nums), [1, ',', 2, ',', 3, ',']);
 });
 

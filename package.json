@@ -7,7 +7,7 @@
     "build": "BABEL_ENV=production babel src -d dist --ignore src/__tests__",
     "test": "nyc ava",
     "test:watch": "npm test -- --watch",
-    "report": "nyc report --reporter=html"
+    "report": "nyc report --reporter=html && open ./coverage/index.html"
   },
   "keywords": [
     "functional programming"

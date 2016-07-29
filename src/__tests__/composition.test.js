@@ -63,8 +63,8 @@ test('checker returns an array of errors if there are any', t => {
   t.deepEqual(onlyEven(1), ['must be even']);
 });
 test('checker returns an empty array if no errors', t => {
-  const hof = checker();
-  t.deepEqual(hof(), []);
+  const noChecks = checker();
+  t.deepEqual(noChecks(), []);
 });
 
 test('dispatch is a higher order function', HOF, dispatch);

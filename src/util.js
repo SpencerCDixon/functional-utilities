@@ -10,8 +10,8 @@ export function note(thing) {
   log(`NOTE: ${thing}`);
 }
 
-export function log(string) {
-  console.log(string);
+export function log(...args) {
+  console.log(...args);
 }
 
 export function T() { return true }
