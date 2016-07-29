@@ -4,6 +4,10 @@ import {
 } from 'lodash';
 
 /**
+ * @module
+ */
+
+/**
  * Predicate to determine if value is a number
  * @param {*} value - value to be tested
  * @returns {Boolean} - whether or not value is a number
