@@ -2,11 +2,6 @@ import { truthy, existy } from './predicates';
 import { construct, cat } from './collections';
 import { fail } from './util';
 
-/**
- * Composition module for creating functional pipelines
- * @module src/composition
- */
-
 /** 
  * Wrapper function that will call an action when condition is true 
  * @param {Boolean} - condition to determine whether or not to call action
