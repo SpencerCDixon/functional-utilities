@@ -2,6 +2,15 @@ import { truthy, existy } from './predicates';
 import { construct, cat } from './collections';
 import { fail } from './util';
 
+/**
+ * @module Composition
+ */
+
+/** 
+ * Wrapper function that will call an action when condition is true 
+ * @param {Boolean} - condition to determine whether or not to call action
+ * @param {Function} - action to be called if condition is true
+*/
 export function doWhen(cond, action) {
   if (truthy(cond))
     return action();

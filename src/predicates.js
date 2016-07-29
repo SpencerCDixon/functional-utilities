@@ -4,7 +4,7 @@ import {
 } from 'lodash';
 
 /**
- * @module
+ * @module Predicates
  */
 
 /**
