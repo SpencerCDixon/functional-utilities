@@ -4,7 +4,8 @@ import {
 } from 'lodash';
 
 /**
- * @module Predicates
+ * Commonly used predicates module
+ * @module src/predicates
  */
 
 /**

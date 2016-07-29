@@ -3,7 +3,8 @@ import { construct, cat } from './collections';
 import { fail } from './util';
 
 /**
- * @module Composition
+ * Composition module for creating functional pipelines
+ * @module src/composition
  */
 
 /** 
