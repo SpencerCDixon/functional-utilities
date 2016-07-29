@@ -19,6 +19,11 @@ test('comparators can take predicates to and return 1, -1, 0', t => {
   const sorted = array.sort(sortable);
   t.deepEqual(sorted, [-20, 2, 5, 20]);
 });
+test('comparator will return 0 when the comparator is not truthy for either options', t => {
+  const alwaysZero = (x, y) => false;
+  const sortable = comparator(alwaysZero);
+  t.is(sortable(1, 2), 0);
+});
 
 test('first returns first element', t => {
   t.is(first([1, 2, 3, 4, 5]), 1);
@@ -51,7 +56,7 @@ test('rest returns the tail of an array', t => {
 });
 test('tail is alias for rest', t => {
   const array = ['first', 'second', 'third'];
-  t.deepEqual(rest(array), ['second', 'third']);
+  t.deepEqual(tail(array), ['second', 'third']);
 });
 
 test('butLast returns everything but last elem of collection', t => {
