@@ -12,6 +12,7 @@ import {
   curry, curry2, curry3,
   partial, partial1, partial2,
   compose,
+  identity,
 } from '..';
 
 test('doWhen calls action when truthy', t => {
@@ -148,3 +149,19 @@ test('compose returns the first function if given only one', t => {
   const fn = () => {}
   t.is(compose(fn), fn)
 })
+
+test('identity always returns the value given to it', t => {
+  const array = [];
+  const object = {};
+  const undef = undefined;
+  const string = 'string';
+  const number = 42;
+  const func = () => {};
+
+  t.is(identity(array), array);
+  t.is(identity(object), object);
+  t.is(identity(undef), undef);
+  t.is(identity(string), string);
+  t.is(identity(number), number);
+  t.is(identity(func), func);
+});

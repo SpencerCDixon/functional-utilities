@@ -24,6 +24,7 @@ export {
   curry, curry2, curry3,
   partial, partial1, partial2,
   compose,
+  identity,
 } from './composition';
 
 export {

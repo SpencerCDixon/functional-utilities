@@ -122,3 +122,10 @@ export function compose(...funcs) {
   const rest = funcs.slice(0, -1)
   return (...args) => rest.reduceRight((composed, f) => f(composed), last(...args))
 }
+
+/** 
+ * Function that does nothing but return the value supplied to it
+ * @param {*} any value
+ * @returns {*} returns value supplied
+*/
+export function identity(value) { return value };
